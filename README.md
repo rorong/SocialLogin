@@ -44,5 +44,3 @@ end
 
 ## Install for Ubuntu and Mac
 ## Ubuntu
-
-
