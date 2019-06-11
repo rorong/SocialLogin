@@ -1,4 +1,4 @@
-#Social Login
+# Social Login
 Social login is a form of single sign-on using existing information from a social networking service such as Facebook, Twitter or Google+, to sign into a third party website instead of creating a new login account specifically for that website. It is designed to simplify logins for end users as well as provide more and more reliable demographic information to web developers.
 
 This project aims at social authentication integration for Google, Facebook, LinkedIn and Instagram along devise.
@@ -26,7 +26,7 @@ Then bundle install.
 * Go to [linkedin.com/developers]('https://www.linkedin.com/developers/') and setup app for linkedin authentication.
 * Go to [instagram.com/developer]('https://www.instagram.com/developer/') and setup app for instagram authentication.
 
-##Usage
+## Usage
 Create a file: config/initializers/omniauth.rb
 Now add the middleware to a Rails app in config/initializers/omniauth.rb file.
 
