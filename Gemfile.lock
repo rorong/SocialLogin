@@ -71,10 +71,6 @@ GEM
     hashie (3.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    instagram (0.3.2)
-      addressable
-      nibbler (>= 1.2.0)
-      yajl-ruby
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jquery-rails (4.3.3)
@@ -101,7 +97,6 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    nibbler (1.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -134,7 +129,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.1.0)
-    puma (3.12.1)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -211,7 +207,6 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
@@ -220,7 +215,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
-  instagram
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
@@ -231,7 +225,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   pg
   pry
-  puma (~> 3.0)
+  puma (~> 4.3)
   rails (~> 5.0.7, >= 5.0.7.2)
   sass-rails (~> 5.0)
   spring
