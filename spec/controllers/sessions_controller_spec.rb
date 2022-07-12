@@ -29,28 +29,56 @@ RSpec.describe SessionsController, :omniauth do
     end
 
     context 'user sign up successfully' do
-      it 'sign up through instagram' do
-        expect {
-          visit session_create_path(provider: 'instagram') 
-        }.to change(User, :count).by(1)
+      context 'instagram authentication' do
+        let(:create_session) { visit session_create_path(provider: 'instagram') }
+
+        it 'sign up through instagram' do
+          expect{ create_session }.to change(User, :count).by(1)
+        end
+
+        it 'sign up successfully' do
+          create_session
+          expect(response.status).to eq(200)
+        end
       end
 
-      it 'sign up through google' do
-        expect {
-          visit session_create_path(provider: 'google') 
-        }.to change(User, :count).by(1)
+      context 'facebook authentication' do
+        let(:create_session) { visit session_create_path(provider: 'facebook') }
+
+        it 'sign up through facebook' do
+          expect{ create_session }.to change(User, :count).by(1)
+        end
+
+        it 'sign up successfully' do
+          create_session
+          expect(response.status).to eq(200)
+        end
       end
 
-      it 'sign up through facebook' do
-         expect {
-           visit session_create_path(provider: 'facebook') 
-         }.to change(User, :count).by(1)
+      context 'linkedin authentication' do
+        let(:create_session) { visit session_create_path(provider: 'linkedin') }
+
+        it 'sign up through linkedin' do
+          expect{ create_session }.to change(User, :count).by(1)
+        end
+
+        it 'sign up successfully' do
+          create_session
+          expect(response.status).to eq(200)
+        end
       end
 
-      it 'sign up through linkedin' do
-        expect { 
-          visit session_create_path(provider: 'linkedin') 
-        }.to change(User, :count).by(1)
+      context 'google authentication' do
+        let(:create_session) { visit session_create_path(provider: 'google') }
+
+        it 'sign up through google' do
+          expect{ create_session }.to change(User, :count).by(1)
+        end
+
+        it 'sign up successfully' do
+          create_session
+          expect(response.status).to eq(200)
+        end
       end
 
       it 'return error' do
