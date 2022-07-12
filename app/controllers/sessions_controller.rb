@@ -1,7 +1,8 @@
 class SessionsController < Devise::SessionsController
 	def create
-    if env["omniauth.auth"].present?
-      @user, message = User.authenticate_social_login(env["omniauth.auth"])
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[params[:provider].to_sym]
+    if request.env["omniauth.auth"].present?
+      @user, message = User.authenticate_social_login(request.env["omniauth.auth"])
       if @user.present? && @user.persisted?
         sign_in_and_redirect @user
       else

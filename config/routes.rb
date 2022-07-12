@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :homes
   root to: 'homes#dashboard'
 
   devise_for :users
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'linkedinlogin', to: redirect('/auth/linkedin'), as: 'linkedinlogin'
     get 'instagramlogin', to: redirect('/auth/instagram'), as: 'instagramlogin'
 
-	  get 'auth/:provider/callback', to: 'sessions#create'
+	  get 'auth/:provider/callback', to: 'sessions#create', as: 'session_create'
 	  get 'auth/failure', to: redirect('/')
   end
 end
