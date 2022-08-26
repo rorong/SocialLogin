@@ -1,5 +1,5 @@
 <%= image_tag @image, height: '50', width: '50'%>
 <div>
-  Hello <%= current_user.name %>
+  Hello <%= current_user.name %> 
   <p><%= link_to 'logout', destroy_user_session_path,method: :delete %></p>
 </div>
